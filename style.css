@@ -88,6 +88,7 @@ a:hover { text-decoration: underline; }
   position: relative;
 }
 
+
 .intro-name {
   font-family: var(--mono);
   font-size: 0.85rem;
@@ -230,12 +231,78 @@ a:hover { text-decoration: underline; }
    ================================================================ */
 
 @media (max-width: 720px) {
-  .intro-rail {
-    display: none;
+  body {
+    font-size: 17px;
   }
 
   .intro {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3rem 1.5rem;
+    min-height: 100dvh;
   }
+
+  .intro h1 {
+    font-size: clamp(2rem, 8vw, 2.8rem);
+  }
+
+  .intro-sub-headline {
+    font-size: 1.15rem;
+  }
+
+  .intro-sub {
+    font-size: 1.1rem;
+  }
+
+  .intro-sub br {
+    display: none;
+  }
+
+  .intro-relay {
+    font-size: 0.85rem;
+  }
+
+  .intro-contact {
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .intro-contact a {
+    font-size: 1rem;
+  }
+
+  .intro-rail {
+    padding-left: 0;
+    padding-top: 2.5rem;
+    align-self: flex-start;
+  }
+
+  .rail-track {
+    width: 100%;
+    height: 3px;
+    display: flex;
+    align-items: center;
+    width: 200px;
+  }
+
+  .rail-dot {
+    animation: rail-slide-h 4s ease-in-out infinite;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+  }
+
+  .rail-stations {
+    flex-direction: row;
+    top: 16px;
+    left: 0;
+    width: 200px;
+    height: auto;
+  }
+}
+
+@keyframes rail-slide-h {
+  0%, 100% { left: 0; top: 50%; }
+  50%      { left: calc(100% - 11px); top: 50%; }
 }
